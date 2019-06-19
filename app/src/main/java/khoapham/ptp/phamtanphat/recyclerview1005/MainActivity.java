@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 
 import java.util.ArrayList;
 
@@ -24,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
         mangmonan.add(new Monan(3,R.drawable.trasuatraxanh));
 
         monanAdapter = new MonanAdapter(mangmonan);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(linearLayoutManager);
+        StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(2 , StaggeredGridLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(staggeredGridLayoutManager);
         recyclerView.setAdapter(monanAdapter);
     }
 }
