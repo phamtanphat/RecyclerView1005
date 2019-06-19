@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -29,6 +30,8 @@ public class MonanAdapter extends RecyclerView.Adapter<MonanAdapter.ViewHolder> 
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         Monan monan = mangmonan.get(i);
         viewHolder.img.setImageResource(monan.getHinhanh());
+
+
     }
 
     @Override
@@ -41,6 +44,18 @@ public class MonanAdapter extends RecyclerView.Adapter<MonanAdapter.ViewHolder> 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             img = itemView.findViewById(R.id.imageMonan);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(v.getContext(), mangmonan.get(getPosition()) + "", Toast.LENGTH_SHORT).show();
+                }
+            });
+            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    return false;
+                }
+            });
         }
     }
 }
