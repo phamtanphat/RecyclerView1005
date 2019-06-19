@@ -21,7 +21,7 @@ public class MonanAdapter extends RecyclerView.Adapter<MonanAdapter.ViewHolder> 
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         LayoutInflater layoutInflater = LayoutInflater.from(viewGroup.getContext());
-        View v = layoutInflater.inflate(R.layout.dong_item_monan,null);
+        View v = layoutInflater.inflate(R.layout.dong_item_monan,viewGroup,false);
         return new ViewHolder(v);
     }
 
@@ -40,7 +40,7 @@ public class MonanAdapter extends RecyclerView.Adapter<MonanAdapter.ViewHolder> 
         ImageView img;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            img = itemView.findViewById(R.id.image);
+            img = itemView.findViewById(R.id.imageMonan);
         }
     }
 }
